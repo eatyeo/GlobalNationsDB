@@ -111,9 +111,6 @@ countries-database/
 - **Styling**: Google Fonts (Quicksand), Custom CSS
 - **Architecture**: MVC-style separation of concerns
 
-## License
-This project is open source and available under the [MIT License](LICENSE).
-
 ---
 
 **Built with ❤️ for global data enthusiasts**
