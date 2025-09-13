@@ -108,7 +108,3 @@ To make your project publicly accessible:
 3. Local Development
 - Use XAMPP, MAMP, or Laragon to run the project locally.
 - Access via `http://localhost/GlobalNationsDB.`
-
----
-
-**Built with ❤️ for global data enthusiasts**
