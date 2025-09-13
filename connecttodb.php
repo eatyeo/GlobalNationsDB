@@ -3,7 +3,7 @@
 $dbhost = "localhost"; // or the specific host InfinityFree provides
 $dbuser = "if0_39920053";
 $dbpass = "TQbyYLVL9BrLKb2"; 
-$dbname = "GlobalNationsDB";
+$dbname = "database";
 
 // Establish a connection to the MySQL database
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
