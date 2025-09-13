@@ -1,32 +1,24 @@
 # GlobalNationsDB
 A comprehensive PHP web application for managing and exploring global country data, languages, and geographical information.
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Database Schema](#database-schema)
-- [Installation](#installation)
-- [File Structure](#file-structure)
-- [Technologies Used](#technologies-used)
-
 ## Overview
-The Countries Database is a web-based application that allows users to manage and explore information about countries, languages, and continents around the world. The system provides comprehensive CRUD (Create, Read, Update, Delete) operations for managing global data with an intuitive user interface.
+GlobalNationsDB is a web-based application that allows users to manage and explore information about countries, languages, and continents. It supports full CRUD (Create, Read, Update, Delete) operations with a clean, responsive UI.
 
 ## Features
 ### Country Management
-- **Add New Countries**: Complete country profile creation with population, area, GDP, and flag data
-- **View Country Details**: Comprehensive country information display with flags and statistics
-- **Language Integration**: Track languages spoken in each country with speaker counts and percentages
+- Add new countries with details (population, area, GDP, flag, etc.)
+- View comprehensive country profiles
+- Associate languages with countries (with speaker counts & percentages)
 
 ### Language Management
-- **View All Languages**: Browse and sort global language database
-- **Add/Edit Languages**: Manage language families, speaker counts, and official status
-- **Delete Languages**: Remove languages with referential integrity checks
+- Browse and sort all languages
+- Add or edit language details (family, speakers, status)
+- Safely delete languages with dependency checks
 
 ### Data Analysis
-- **Continental Analysis**: Identify continents without registered countries
-- **Language Statistics**: View global speaker distributions and official language status
-- **Sorting & Filtering**: Dynamic data sorting by multiple criteria
+- Identify continents with no registered countries
+- Generate global language statistics
+- Filter and sort data dynamically
 
 ### User Interface
 - Responsive design with Google Fonts (Quicksand)
@@ -42,74 +34,80 @@ The Countries Database is a web-based application that allows users to manage an
 - **country_language**: Many-to-many relationship between countries and languages
 
 ### Key Relationships
-- Countries belong to continents (1:N)
-- Countries can have multiple languages (N:M)
-- Languages can be spoken in multiple countries (N:M)
+- Continents → Countries (1:N)
+- Countries ↔ Languages (N:M)
 
 ## Installation
 ### Prerequisites
 - PHP 7.4 or higher
-- MySQL/MariaDB database server
-- Web server (Apache/Nginx)
-- Modern web browser
+- MySQL or MariaDB
+- Web server (Apache or Nginx)
+- Browser (Chrome/Firefox/Edge/Safari)
 
-### Getting Started
+### Setup Instructions
+1. Clone this repository:
+`git clone https://github.com/yourusername/GlobalNationsDB.git`
+`cd GlobalNationsDB`
 
-### Adding a Country
-1. Click "Add New Country" from the main menu
-2. Fill in required information:
-   - Country ID and name
-   - Capital city
-   - Select continent
-   - Population and area data
-3. Optionally add economic data (GDP, independence year)
-4. Configure languages spoken with speaker counts and percentages
-5. Submit the form to save
+2. Import the database schema:
+- Open `countries.php` (or a dedicated .sql file if you export one).
+- Run the SQL in your MySQL/MariaDB server to create the required tables.
 
-### Managing Languages
-- **View Languages**: Browse all languages with sorting options
-- **Edit Language**: Update language family, speaker counts, or official status
-- **Delete Language**: Remove languages (checks for country dependencies)
+3. Configure your database connection:
+- Open `connecttodb.php`
+- Update credentials:
+
+4. Place the project inside your web server’s document root:
+XAMPP (Windows/macOS/Linux):
+- Copy folder into `htdocs/GlobalNationsDB`
+- Access via: `http://localhost/GlobalNationsDB/mainmenu.php`
+Native Apache/Nginx:
+- Point your virtual host or site config to the project folder.
+
+### Usage
+- Go to `mainmenu.php` to access the application.
+- From the main menu, you can:
+- Add new countries
+- Browse and manage languages
+- Explore continents and statistics
 
 ## File Structure
 ```
-countries-database/
+GlobalNationsDB/
 ├── mainmenu.php          # Main navigation
-├── connecttodb.php       # Database connection configuration
-├── countries.php         # Database schema and sample data
-├── addcountry.php        # Country creation form and logic
-├── selectcountry.php     # Country details viewer
-├── showlanguages.php     # Language listing with sorting
-├── editlanguage.php      # Language editing interface
-├── deletelanguage.php    # Language deletion with validation
-├── displaycontinents.php # Continental analysis tool
-└── mainmenu.css          # Application styling
+├── connecttodb.php       # Database connection config
+├── countries.php         # Database schema + sample data
+├── addcountry.php        # Add new countries
+├── selectcountry.php     # View country details
+├── showlanguages.php     # Browse languages
+├── editlanguage.php      # Edit languages
+├── deletelanguage.php    # Delete languages
+├── displaycontinents.php # Continental analysis
+└── mainmenu.css          # Styling
 ```
 
-### Key Components
-**Core Files:**
-- `mainmenu.php` - Application entry point and navigation
-- `connecttodb.php` - Centralized database connection management
-- `countries.php` - Database schema definition and sample data
-
-**Country Management:**
-- `addcountry.php` - Comprehensive country addition with language support
-- `selectcountry.php` - Detailed country information display
-
-**Language Management:**
-- `showlanguages.php` - Language database browser with sorting
-- `editlanguage.php` - Language information editor
-- `deletelanguage.php` - Safe language removal with dependency checks
-
-**Analysis Tools:**
-- `displaycontinents.php` - Identifies continents without countries
-
 ## Technologies Used
-- **Backend**: PHP 7.4+ with MySQLi
-- **Database**: MySQL/MariaDB
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Styling**: Google Fonts (Quicksand), Custom CSS
-- **Architecture**: MVC-style separation of concerns
+- Backend: PHP 7.4+ (MySQLi)
+- Database: MySQL/MariaDB
+- Frontend: HTML5, CSS3, JavaScript
+- Styling: Google Fonts (Quicksand), Custom CSS
+- Architecture: MVC-inspired separation
+
+## Deployment
+To make your project publicly accessible:
+1. Shared Hosting (Beginner-Friendly)
+- Most shared hosting providers (Hostinger, Bluehost, DreamHost, etc.) support PHP + MySQL.
+- Upload all files to your hosting account’s /public_html folder.
+- Import your database via phpMyAdmin or MySQL CLI.
+
+2. VPS / Cloud Hosting (Advanced)
+- Use a provider (DigitalOcean, AWS, Linode).
+- Install Apache/Nginx + PHP + MySQL.
+- Set up a virtual host to serve GlobalNationsDB.
+
+3. Local Development
+- Use XAMPP, MAMP, or Laragon to run the project locally.
+- Access via `http://localhost/GlobalNationsDB.`
 
 ---
 
