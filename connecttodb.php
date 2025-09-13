@@ -21,4 +21,3 @@ register_shutdown_function(function() use ($connection) {
     }
 });
 ?>
-
