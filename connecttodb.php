@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
-$dbhost = "localhost"; // or the specific host InfinityFree provides
+$dbhost = "sql201.infinityfree.com";
 $dbuser = "if0_39920053";
 $dbpass = "TQbyYLVL9BrLKb2"; 
-$dbname = "database";
+$dbname = "if0_39920053_database";
 
 // Establish a connection to the MySQL database
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
